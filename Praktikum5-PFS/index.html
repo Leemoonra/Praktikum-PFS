@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portofolio Rara</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+    <style>
+      body {
+        background-color: #faf7ff;
+        color: #35284d;
+      }
+
+      .navbar {
+        background-color: #8b5cf6;
+      }
+
+      .navbar-brand,
+      .nav-link {
+        color: white !important;
+      }
+
+      .hero {
+        padding: 70px 0;
+        background: linear-gradient(135deg, #eee7ff, #fce7f3);
+      }
+
+      .hero h1 span {
+        color: #8b5cf6;
+      }
+
+      .foto {
+        width: 230px;
+        height: 280px;
+        object-fit: cover;
+        border: 5px solid white;
+        border-radius: 20px;
+        box-shadow: 0 5px 15px #0002;
+      }
+
+      .judul {
+        color: #7541c8;
+        font-weight: bold;
+        margin-bottom: 25px;
+      }
+
+      .card {
+        height: 100%;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 3px 12px #0001;
+        transition: 0.3s;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+      }
+
+      section {
+        padding: 55px 0;
+      }
+
+      .tag {
+        display: inline-block;
+        padding: 5px 12px;
+        margin: 3px;
+        border-radius: 20px;
+        background: #eee7ff;
+        color: #7541c8;
+        font-size: 13px;
+      }
+
+      footer {
+        background: #7541c8;
+        color: white;
+        padding: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navigasi -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">RARA.</a>
+
+        <button
+          class="navbar-toggler bg-light"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#tentang">Tentang</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#skill">Keahlian</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#pengalaman">Pengalaman</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#proyek">Proyek</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#hobi">Hobi</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Perkenalan -->
+    <header class="hero" id="tentang">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-7">
+            <p class="text-secondary">HALO, SELAMAT DATANG!</p>
+            <h1>Hai, aku <span>Rara!</span></h1>
+
+            <h5>Miftahul Jannah Az-Zahra</h5>
+            <p>Mahasiswa Teknologi Informasi</p>
+
+            <p>
+              Universitas 'Aisyiyah Yogyakarta, Fakultas Sains dan Teknologi.
+              Saat ini aku masih belajar dan mencoba berbagai hal baru di bidang
+              teknologi.
+            </p>
+
+            <a
+              href="#skill"
+              class="btn btn-purple text-white"
+              style="background: #8b5cf6"
+            >
+              Kenali Aku
+            </a>
+          </div>
+
+          <div class="col-md-5 text-center mt-4 mt-md-0">
+            <img
+              src="My%20Profil.jpeg"
+              alt="Foto Rara"
+              class="foto"
+              onerror="this.alt = 'Foto belum ditemukan'"
+            />
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Keahlian -->
+    <section id="skill">
+      <div class="container">
+        <h2 class="judul text-center">Keahlian</h2>
+
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="card p-4 text-center">
+              <h5>HTML</h5>
+              <p>Mempelajari struktur halaman website.</p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card p-4 text-center">
+              <h5>CSS</h5>
+              <p>Mengatur warna, layout, dan tampilan website.</p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card p-4 text-center">
+              <h5>Bootstrap</h5>
+              <p>Membuat website lebih rapi dan responsif.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pengalaman -->
+    <section id="pengalaman" style="background: #f0eaff">
+      <div class="container">
+        <h2 class="judul text-center">Pengalaman Organisasi</h2>
+
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card p-4">
+              <h5>ITECH</h5>
+              <p>Pengalaman dalam organisasi ITECH.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="card p-4">
+              <h5>Kepanitiaan</h5>
+              <p>Pernah menjadi panitia MATAF 2026, CTRL-N, dan Makrab 2026.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Proyek -->
+    <section id="proyek">
+      <div class="container">
+        <h2 class="judul text-center">Proyek Perkuliahan</h2>
+
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="card p-4">
+              <h5>Desain UI/UX</h5>
+              <p>
+                Proyek mata kuliah Interaksi Manusia dan Komputer yang berkaitan
+                dengan desain antarmuka pengguna.
+              </p>
+              <div>
+                <span class="tag">UI/UX</span>
+                <span class="tag">Perkuliahan</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hobi -->
+    <section id="hobi" style="background: #f0eaff">
+      <div class="container text-center">
+        <h2 class="judul">Hobi dan Kesukaan</h2>
+
+        <p>
+          Aku suka menonton drakor, dracin, film, mendengarkan podcast, dan
+          mencari hiburan yang menarik.
+        </p>
+
+        <p>Genre favorit: komedi romantis, tergantung suasana hati.</p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center">
+      <p class="mb-1 fw-bold">Miftahul Jannah Az-Zahra</p>
+      <small>Teknologi Informasi · © 2026</small>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
