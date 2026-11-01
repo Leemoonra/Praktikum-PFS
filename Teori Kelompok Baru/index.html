@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Pengguna API</title>
+
+   <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    min-height:100vh;
+    padding:30px;
+
+    /* Background Gradient Animasi */
+    background: linear-gradient(
+        -45deg,
+        #0f172a,
+        #312e81,
+        #1d4ed8,
+        #06b6d4,
+        #9333ea
+    );
+    background-size: 400% 400%;
+    animation: gradientBG 12s ease infinite;
+}
+
+@keyframes gradientBG{
+    0%{
+        background-position:0% 50%;
+    }
+    50%{
+        background-position:100% 50%;
+    }
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+.container{
+    max-width:800px;
+    margin:auto;
+}
+
+h1{
+    text-align:center;
+    color:white;
+    font-size:2.5rem;
+    margin-bottom:25px;
+    font-weight:700;
+    text-shadow:0 0 20px rgba(255,255,255,.4);
+}
+
+#pesan{
+    text-align:center;
+    color:white;
+    font-size:1rem;
+    margin-bottom:20px;
+}
+
+.user{
+    position:relative;
+    overflow:hidden;
+
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,0.15);
+    border-radius:22px;
+
+    padding:20px;
+    margin-bottom:18px;
+
+    transition:all .4s ease;
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.25);
+}
+
+/* Efek garis bergerak */
+.user::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-100%;
+
+    width:100%;
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.25),
+        transparent
+    );
+
+    transition:0.8s;
+}
+
+.user:hover::before{
+    left:100%;
+}
+
+.user:hover{
+    transform:translateY(-8px) scale(1.02);
+
+    box-shadow:
+        0 0 15px #60a5fa,
+        0 0 30px #3b82f6,
+        0 15px 40px rgba(0,0,0,.35);
+}
+
+.user h3{
+    color:#7dd3fc;
+    font-size:1.25rem;
+    margin-bottom:8px;
+}
+
+.user p{
+    color:#e5e7eb;
+    font-size:0.95rem;
+}
+
+.user::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:22px;
+    padding:2px;
+    background:linear-gradient(
+        135deg,
+        #60a5fa,
+        #22d3ee,
+        #9333ea
+    );
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite:xor;
+    mask-composite:exclude;
+}
+
+/* Scrollbar Modern */
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#0f172a;
+}
+
+::-webkit-scrollbar-thumb{
+    background:linear-gradient(
+        #3b82f6,
+        #22d3ee,
+        #9333ea
+    );
+    border-radius:10px;
+}
+</style>
+
+<body>
+
+    <div class="container">
+        <h1>Daftar Pengguna</h1>
+
+        <div id="pesan">Memuat data pengguna...</div>
+
+        <div id="daftarPengguna"></div>
+    </div>
+
+    <script>
+        const url = "https://jsonplaceholder.typicode.com/users";
+
+        fetch(url)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Server gagal merespons!");
+                }
+
+                return response.json();
+            })
+            .then(data => {
+                const daftar = document.getElementById("daftarPengguna");
+                const pesan = document.getElementById("pesan");
+
+                pesan.style.display = "none";
+
+                data.forEach(user => {
+                    daftar.innerHTML += `
+                        <div class="user">
+                            <h3>${user.name}</h3>
+                            <p>Email: ${user.email}</p>
+                        </div>
+                    `;
+                });
+            })
+            .catch(error => {
+                document.getElementById("pesan").innerHTML =
+                    "Gagal mengambil data: " + error.message;
+            });
+    </script>
+
+</body>
+</html>
