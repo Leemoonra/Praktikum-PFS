@@ -1,0 +1,293 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.app-background {
+  min-height: 100vh;
+  background: #f3f1fa;
+  padding: 45px 0;
+}
+
+.dashboard {
+  max-width: 1050px;
+}
+
+.dashboard-header {
+  background: #17172b;
+  color: white;
+  padding: 35px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.eyebrow {
+  color: #b9a5ff;
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.dashboard-header h1 {
+  font-size: 38px;
+  font-weight: 750;
+  margin: 8px 0;
+}
+
+.dashboard-header h1 span {
+  color: #b9a5ff;
+}
+
+.subtitle {
+  color: #c8c5d8;
+  margin: 0;
+}
+
+.header-icon {
+  background: #393253;
+  color: #d7c9ff;
+  padding: 18px;
+  border-radius: 15px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  background: white;
+  padding: 22px;
+  border-radius: 15px;
+  color: #7964b9;
+  box-shadow: 0 4px 15px #2820440c;
+  transition: 0.3s;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.stat-card h3 {
+  color: #22223b;
+  font-size: 28px;
+  margin: 10px 0 0;
+  font-weight: 700;
+}
+
+.stat-card p {
+  color: #88849b;
+  margin: 0;
+  font-size: 13px;
+}
+
+.completed-stat {
+  color: #299b70;
+}
+
+.pending-stat {
+  color: #d99b35;
+}
+
+.task-section {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px #2820440c;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  gap: 15px;
+}
+
+.section-heading h2 {
+  font-size: 23px;
+  font-weight: 700;
+  color: #22223b;
+}
+
+.section-heading p {
+  color: #89869a;
+  font-size: 13px;
+  margin: 0;
+}
+
+.add-button {
+  background: #7560ad;
+  border: none;
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  padding: 10px 17px;
+  border-radius: 10px;
+}
+
+.add-button:hover {
+  background: #5d488f;
+}
+
+.toolbar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.search-box {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #e5e1ee;
+  padding: 0 12px;
+  border-radius: 9px;
+  color: #8c7ab8;
+}
+
+.search-box .form-control {
+  border: none;
+  box-shadow: none;
+}
+
+.filter-select {
+  max-width: 175px;
+  border-color: #e5e1ee;
+}
+
+.task-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #88849b;
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+
+.task-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.task-card {
+  border: 1px solid #eeeaf5;
+  border-radius: 13px;
+  transition: 0.3s;
+}
+
+.task-card:hover {
+  border-color: #b9a5ff;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px #28204412;
+}
+
+.task-name {
+  color: #29263d;
+  font-weight: 650;
+  font-size: 16px;
+  overflow-wrap: anywhere;
+}
+
+.task-date {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #918ba2;
+  font-size: 12px;
+  margin: 15px 0;
+}
+
+.task-actions {
+  display: flex;
+  gap: 8px;
+  border-top: 1px solid #f0edf5;
+  padding-top: 13px;
+}
+
+.task-actions button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 55px 15px;
+  color: #9889c3;
+}
+
+.empty-state h5 {
+  color: #39334f;
+  margin-top: 15px;
+}
+
+.empty-state p {
+  color: #9993a9;
+  font-size: 13px;
+}
+
+.dashboard-footer {
+  text-align: center;
+  color: #9993a9;
+  font-size: 12px;
+  padding: 25px 0 0;
+}
+
+@media (max-width: 600px) {
+  .app-background {
+    padding: 20px 0;
+  }
+
+  .dashboard-header {
+    padding: 23px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 29px;
+  }
+
+  .stats-grid {
+    gap: 9px;
+  }
+
+  .stat-card {
+    padding: 13px;
+  }
+
+  .stat-card h3 {
+    font-size: 23px;
+  }
+
+  .task-section {
+    padding: 18px;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .toolbar {
+    flex-direction: column;
+  }
+
+  .filter-select {
+    max-width: none;
+  }
+
+  .task-grid {
+    grid-template-columns: 1fr;
+  }
+}

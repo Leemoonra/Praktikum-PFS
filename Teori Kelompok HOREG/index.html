@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pendaftaran Kelas Web</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      body {
+        background: linear-gradient(135deg, #4facfe, #00f2fe);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container {
+        background: #fff;
+        width: 420px;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 25px;
+        color: #333;
+      }
+
+      .input-group {
+        margin-bottom: 18px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+      }
+
+      input {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid #ddd;
+        border-radius: 8px;
+        font-size: 15px;
+      }
+
+      input:focus {
+        outline: none;
+        border-color: #4facfe;
+      }
+
+      .password-wrapper {
+        position: relative;
+      }
+
+      .password-wrapper input {
+        padding-right: 45px;
+      }
+
+      #togglePassword {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        font-size: 18px;
+        user-select: none;
+      }
+
+      .error {
+        color: red;
+        font-size: 13px;
+        margin-top: 5px;
+      }
+
+      button {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        background: #4facfe;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      button:hover {
+        background: #2e8cff;
+      }
+
+      .success {
+        margin-top: 20px;
+        text-align: center;
+        color: green;
+        font-weight: bold;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h2>📚 Pendaftaran Kelas Web</h2>
+
+      <form id="formPendaftaran">
+        <div class="input-group">
+          <label for="nama">Nama</label>
+          <input type="text" id="nama" />
+          <div class="error" id="errorNama"></div>
+        </div>
+
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input type="text" id="email" />
+          <div class="error" id="errorEmail"></div>
+        </div>
+
+        <div class="input-group">
+          <label for="password">Password</label>
+
+          <div class="password-wrapper">
+            <input type="password" id="password" />
+            <span id="togglePassword">👁️</span>
+          </div>
+
+          <div class="error" id="errorPassword"></div>
+        </div>
+
+        <button type="submit">Daftar</button>
+
+        <div class="success" id="successMsg"></div>
+      </form>
+    </div>
+
+    <script>
+      const form = document.getElementById("formPendaftaran");
+      const passwordInput = document.getElementById("password");
+      const togglePassword = document.getElementById("togglePassword");
+
+      togglePassword.addEventListener("click", function () {
+        if (passwordInput.type === "password") {
+          passwordInput.type = "text";
+          togglePassword.textContent = "🙈";
+        } else {
+          passwordInput.type = "password";
+          togglePassword.textContent = "👁️";
+        }
+      });
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        let nama = document.getElementById("nama").value.trim();
+        let email = document.getElementById("email").value.trim();
+        let password = passwordInput.value;
+
+        document.getElementById("errorNama").textContent = "";
+        document.getElementById("errorEmail").textContent = "";
+        document.getElementById("errorPassword").textContent = "";
+        document.getElementById("successMsg").textContent = "";
+
+        let valid = true;
+
+        if (nama === "") {
+          document.getElementById("errorNama").textContent =
+            "Nama tidak boleh kosong";
+          valid = false;
+        }
+
+        if (!email.includes("@")) {
+          document.getElementById("errorEmail").textContent =
+            "Email harus mengandung @";
+          valid = false;
+        }
+
+        if (password.length < 8) {
+          document.getElementById("errorPassword").textContent =
+            "Password minimal 8 karakter";
+          valid = false;
+        }
+
+        if (valid) {
+          document.getElementById("successMsg").textContent =
+            "Pendaftaran berhasil, selamat datang, " + nama + "!";
+        }
+      });
+    </script>
+  </body>
+</html>
