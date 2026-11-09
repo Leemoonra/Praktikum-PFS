@@ -12,7 +12,10 @@ function App() {
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState("All");
 
-  const handleShowForm = () => setShowForm(true);
+  const handleShowForm = () => {
+    setTaskToEdit(null);
+    setShowForm(true);
+  };
 
   const handleCloseForm = () => {
     setShowForm(false);
@@ -26,17 +29,28 @@ function App() {
       year: "numeric",
     });
 
-    setTasks([...tasks, { ...task, id: Date.now(), createdAt: date }]);
+    const newTask = {
+      ...task,
+      id: Date.now(),
+      createdAt: date,
+    };
+
+    setTasks((prevTasks) => [...prevTasks, newTask]);
+    handleCloseForm();
   };
 
   const editTask = (updatedTask) => {
-    setTasks(
-      tasks.map((task) => (task.id === updatedTask.id ? updatedTask : task)),
+    setTasks((prevTasks) =>
+      prevTasks.map((task) =>
+        task.id === updatedTask.id ? { ...task, ...updatedTask } : task,
+      ),
     );
+
+    handleCloseForm();
   };
 
   const deleteTask = (id) => {
-    setTasks(tasks.filter((task) => task.id !== id));
+    setTasks((prevTasks) => prevTasks.filter((task) => task.id !== id));
   };
 
   const showEditForm = (task) => {
@@ -46,11 +60,14 @@ function App() {
 
   const filteredTasks = tasks.filter((task) => {
     const matchSearch = task.name.toLowerCase().includes(search.toLowerCase());
+
     const matchFilter = filter === "All" || task.status === filter;
+
     return matchSearch && matchFilter;
   });
 
   const completed = tasks.filter((task) => task.status === "Done").length;
+
   const pending = tasks.length - completed;
 
   return (
@@ -64,6 +81,7 @@ function App() {
             </h1>
             <p className="subtitle">Organize your day, one task at a time.</p>
           </div>
+
           <div className="header-icon">
             <ListTodo size={30} />
           </div>
@@ -104,6 +122,7 @@ function App() {
           <div className="toolbar">
             <div className="search-box">
               <Search size={18} />
+
               <Form.Control
                 placeholder="Cari tugas..."
                 value={search}
@@ -127,13 +146,14 @@ function App() {
             <span>
               Showing {filteredTasks.length} of {tasks.length} tasks
             </span>
+
             <Badge bg="dark">Daily Planner</Badge>
           </div>
 
           <TaskList
             tasks={filteredTasks}
-            deleteTask={deleteTask}
-            showEditForm={showEditForm}
+            onEdit={showEditForm}
+            onDelete={deleteTask}
           />
         </section>
 

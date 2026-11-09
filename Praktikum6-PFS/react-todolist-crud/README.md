@@ -1,16 +1,41 @@
-# React + Vite
+# TodoList React JS CRUD
+Aplikasi TodoList sederhana yang dibuat menggunakan React JS untuk membantu mengelola daftar tugas sehari-hari.
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+## Fitur Aplikasi
 
-Currently, two official plugins are available:
+- Create    : Menambahkan tugas baru melalui tombol Add Task.
+- Read      : Menampilkan daftar tugas yang sudah dibuat.
+- Update    : Mengubah informasi tugas melalui tombol Edit.
+- Delete    : Menghapus tugas melalui tombol Delete.
+- Search    : Mencari tugas berdasarkan nama.
+- Filter    : Menyaring tugas berdasarkan status pengerjaan.
+- Statistik : Menampilkan jumlah seluruh tugas, tugas yang sudah selesai, dan tugas yang belum selesai.
+- Informasi Tugas   : Menampilkan nama tugas, prioritas, dan status pengerjaan.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Teknologi yang Digunakan
+- React JS
+- Vite
+- React Bootstrap
+- Lucide React
 
-## React Compiler
+## Screenshot Aplikasi
+### 1. Dashboard
+![Dashboard](./screenshots/dashboard.png)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 2. Tambah Tugas
+![Add Task](./screenshots/add-task.png)
 
-## Expanding the Oxlint configuration
+### 3. Daftar Tugas
+![Task List](./screenshots/task-list.png)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+### 4. Edit Tugas
+![Edit Task](./screenshots/edit-task.png)
+
+### 5. Hapus Tugas
+![Delete Task](./screenshots/delete-task.png)
+
+## Cara Menjalankan Aplikasi
+1. Clone repository GitHub.
+2. Jalankan `npm install`.
+3. Jalankan `npm run dev`.
+4. Buka alamat localhost yang muncul di terminal.
