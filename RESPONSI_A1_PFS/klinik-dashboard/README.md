@@ -1,16 +1,75 @@
-# React + Vite
+# Dashboard Rekam Medis Klinik
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplikasi Dashboard Rekam Medis Klinik berbasis React JS yang dibuat untuk membantu pengelolaan data pasien dan informasi rekam medis secara sederhana.
 
-Currently, two official plugins are available:
+## Fitur Aplikasi
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Dashboard:** Menampilkan ringkasan statistik dan informasi pasien.
+- **Data Pasien:** Menampilkan daftar data pasien.
+- **Create:** Menambahkan data pasien baru.
+- **Read:** Menampilkan informasi pasien dan rekam medis.
+- **Update:** Mengubah informasi data pasien.
+- **Delete:** Menghapus data pasien.
+- **Search:** Mencari data pasien berdasarkan kata kunci.
+- **Poliklinik:** Menampilkan informasi poliklinik.
+- **Dokter:** Menampilkan informasi dokter.
+- **Rekam Medis:** Menampilkan informasi riwayat kunjungan pasien.
+- **Status Penanganan:** Menampilkan status penanganan pasien.
+- **Pengaturan:** Mengelola informasi profil aplikasi.
 
-## React Compiler
+## Teknologi yang Digunakan
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React JS
+- Vite
+- JavaScript
+- Bootstrap
+- CSS
 
-## Expanding the ESLint configuration
+## Screenshot Aplikasi
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 1. Dashboard
+
+![Dashboard](./screenshots/dashboard.png)
+
+### 2. Data Pasien
+
+![Data Pasien](./screenshots/data-pasien.png)
+
+### 3. Pencarian Pasien
+
+![Pencarian](./screenshots/pencarian.png)
+
+### 4. Tambah Pasien
+
+![Tambah Pasien](./screenshots/tambah-pasien.png)
+
+### 5. Edit Pasien
+
+![Edit Pasien](./screenshots/edit-pasien.png)
+
+### 6. Hapus Pasien
+
+![Hapus Pasien](./screenshots/hapus-pasien.png)
+
+### 7. Poliklinik
+
+![Poliklinik](./screenshots/poliklinik.png)
+
+### 8. Dokter
+
+![Dokter](./screenshots/dokter.png)
+
+### 9. Rekam Medis
+
+![Rekam Medis](./screenshots/rekam-medis.png)
+
+### 10. Pengaturan
+
+![Pengaturan](./screenshots/pengaturan.png)
+
+## Cara Menjalankan Aplikasi
+
+1. Clone repository GitHub.
+2. Jalankan `npm install`.
+3. Jalankan `npm run dev`.
+4. Buka alamat localhost yang muncul di terminal.
