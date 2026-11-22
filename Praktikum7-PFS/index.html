@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Mahasiswa</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Data Mahasiswa</h1>
+      <p class="subtitle">Sistem Pengelolaan Data Mahasiswa</p>
+
+      <div class="form-container">
+        <h2 id="form-title">Tambah Mahasiswa</h2>
+
+        <form id="mahasiswa-form">
+          <input type="hidden" id="id" />
+
+          <div class="form-group">
+            <label for="nama">Nama Mahasiswa</label>
+            <input
+              type="text"
+              id="nama"
+              placeholder="Masukkan nama mahasiswa"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="nim">NIM</label>
+            <input type="text" id="nim" placeholder="Masukkan NIM" required />
+          </div>
+
+          <button type="submit" id="submit-btn">Simpan Data</button>
+
+          <button type="button" id="cancel-btn" hidden>Batal</button>
+        </form>
+      </div>
+
+      <div class="table-container">
+        <h2>Daftar Mahasiswa</h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Nama</th>
+              <th>NIM</th>
+              <th>Tanggal Dibuat</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+
+          <tbody id="mahasiswa-list">
+            <tr>
+              <td colspan="5">Memuat data...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
